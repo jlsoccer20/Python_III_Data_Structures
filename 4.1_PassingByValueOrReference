@@ -1,0 +1,55 @@
+#Add one to anInteger 
+def addOne(anInteger):  
+    anInteger = anInteger + 1
+    print("anInteger:", anInteger)
+
+#Create myInteger with the value 5
+myInteger = 5   
+print("myInteger before addOne:", myInteger)
+#Call addOne on myInteger
+addOne(myInteger)   
+print("myInteger after addOne:", myInteger)
+
+# ________________________________________________
+
+#Add an exclamation to aString
+def addExc(aString):  
+    aString = aString + "!"
+    print("aString:", aString)
+
+myString = "Hello, world"
+print("myString before addExc:", myString)
+addExc(myString)
+print("myString after addExc:", myString)
+
+# ________________________________________________
+
+#Add an item to aList
+def addItem(aList):  
+    aList.append("New Item!")
+    print("aList:", aList)
+
+myList = ["One", "Two", "Three"]
+print("myList before addItem:", myList)
+addItem(myList)
+print("myList after addItem:", myList)
+
+# ________________________________________________
+
+myInt1 = 5
+myInt2 = myInt1
+myInt1 = 7
+
+print("myInt1:", myInt1)
+print("myInt2:", myInt2)
+
+# ________________________________________________
+
+myList1 = ["One", "Two", "Three"]
+myList2 = myList1
+myList1.append("Four")
+
+print("myList1: ", myList1)
+print("myList2: ", myList2)
+
+
