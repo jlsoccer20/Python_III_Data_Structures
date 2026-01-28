@@ -1,0 +1,75 @@
+# A method is a function contained inside a data structure
+# ----------------------------------------------------------
+# Methods in Practice
+
+myNumericString = "12345"
+myNonNumericString = "ABCDE"
+
+# prints True if digital
+print(myNumericString.isdigit()) # True
+
+# prints True if digital
+print(myNonNumericString.isdigit()) # False
+
+# ---------------------------------------------------------
+# Equivalent Syntax
+
+import string
+#Return True if inString contains all digits
+def isdigit(inString):
+    #Check each character one-by-one
+    for character in inString:
+        #Check if the character is a digit
+        if not character in string.digits:
+            #Return false if not
+            return False
+    #Return true if we reached here
+    return True
+
+myString = "52672"
+
+# These two lines are equivalent
+print(isdigit(myString)) # True
+print(myString.isdigit()) # True
+
+# ---------------------------------------------------------
+# Method isupper()
+
+my_string = "abcdefg"
+my_string.isupper()
+
+# ---------------------------------------------------------
+# Method startswith()
+
+my_string = "abcdefg"
+my_string.startswith("Yel") # False
+
+# ---------------------------------------------------------
+# Further Learning Resources:
+
+# https://python.swaroopch.com/data_structures.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
