@@ -1,0 +1,30 @@
+# function fancy_find() takes two string parameters: 
+# - search_within
+# - search_for
+
+# check if search_for is found in search_within
+
+# If found, prints:
+#"[search_for] found at index [index]!"
+
+# If search_for not found in search_within, prints 
+# "[search_for] was not found within [search_within]!"
+
+
+
+def fancy_find(search_within, search_for):
+    
+    indx = search_within.find(search_for)
+    
+    if indx != -1: # output of -1 indicates not found
+               
+        message = f"{search_for} found at index {indx}!"
+        
+    else:
+        message = f"{search_for} was not found within {search_within}!"
+
+    return message
+
+# Sample output
+print(fancy_find("ABCDEF", "DEF")) #DEF found at index 3!
+print(fancy_find("ABCDEF", "GHI")) #GHI was not found within ABCDEF!
