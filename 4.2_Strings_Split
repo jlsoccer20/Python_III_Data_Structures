@@ -1,0 +1,13 @@
+# function num_words takes string argument, returns number of words in string
+
+# Example:
+#  num_words("Veni, Vidi, Vici.") -> 3
+
+def num_words(string):
+    result = len(string.split())
+    return result
+
+# Output test
+print(num_words("Vini, Vidi, Vici.")) #3
+print(num_words("Hello, world!")) #2
+print(num_words("HeyDavidwhyaren'ttherespacesinthissentence")) #1
