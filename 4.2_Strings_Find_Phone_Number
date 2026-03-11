@@ -1,0 +1,36 @@
+# One common function of online text-parsers is trying to find
+# known text in a block of other text. For example, from a web
+# site, we might want to find any phone numbers present on the
+# web site.
+
+# Function find_phone_number
+# Takes one parameter, a string. 
+# Returns phone number that was present in the string.
+
+# Assume:
+# - The phone number will be all digits, such as 4043219876.
+# - There will only be one phone number in the string.
+# - There will be a phone number in the string.
+# - Either the phone number will be at the start or end of
+#   the string, or it will have spaces on either side of it.
+
+# There may be other numbers in the string, but there will only
+# be one 10-digit number.
+
+# Consider using: split, find, casting strings to integers, error handling
+
+def find_phone_number(text):
+    
+    for token in text.split():
+        digits = ''.join(ch for ch in token if ch.isdigit())
+        
+        if len(digits) == 10:
+            return digits
+
+# Test cases
+print(find_phone_number("hello 4049876543 goodbye"))
+print(find_phone_number("7705551234 this is alex"))
+print(find_phone_number("doh ray me abc 123 its 6789123456"))
+#4049876543
+#7705551234
+#6789123456
