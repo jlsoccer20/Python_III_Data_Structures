@@ -1,0 +1,73 @@
+# Practice: splitting up strings, removing unnecessary characters, 
+# converting to integers, and running a big conditional. 
+
+# Colors:
+#  rgb(red_val, green_val, blue_val)
+# red_val, green_val and blue_val values from 0-255
+
+# For example:
+# - rgb(255, 0, 0) would make a color red. 
+# - rgb(255, 255, 0) would make yellow, because it is equal 
+#   parts red and green. 
+# - rgb(0, 0, 0) would make black, the absence of all color.
+# - rgb(255, 255, 255) would make white, the presence of all
+#   colors equally.
+
+# Function "find_color"
+# Takes one argument, a string 
+
+# Returns a simplified version of the color
+# that is represented according to the following rules:
+
+# If there is more red than any other color, return "red".
+# If there is more green than any other color, return "green".
+# If there is more blue than any other color, return "blue".
+
+# If there are equal parts red and green, return "yellow".
+# If there are equal parts red and blue, return "purple".
+# If there are equal parts green and blue, return "teal".
+
+# If there are equal parts red, green, and blue, return "gray".
+
+def find_color(text):
+    
+    no_prefix = text.replace("rgb(", "")
+    no_suffix = no_prefix.replace(")", "")
+    cleaned = no_suffix.replace(" ", "")
+    
+    r, g, b = cleaned.split(",")
+
+    red = int(r)
+    green = int(g)
+    blue = int(b)
+    
+    if red == green == blue:
+        return "gray"
+    
+    if red == green and red > blue:
+        return "yellow"
+    
+    if red == blue and red > green:
+        return "purple"
+    
+    if green == blue and green > red:
+        return "teal"
+    
+    if red > green and red > blue:
+        return "red"
+    
+    if green > red and green > blue:
+        return "green"
+    
+    if blue > red and blue > green:
+        return "blue"
+    
+    return "unknown"
+    
+# red, purple, gray
+print(find_color("rgb(125, 50, 75)"))
+print(find_color("rgb(125, 17, 125)"))
+print(find_color("rgb(217, 217, 217)"))
+
+
+
